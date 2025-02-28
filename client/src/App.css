@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+
+}
+
+/*Color pallete for website*/
+:root {
+  --primary: #001a25;
+  --secondary: #003f5c;
+  --background: white;
+  --text: black;
+  --textAccent: white;
+  --accent: #ff6361;
+  --neutral: #ffa600;
+}
+
+/*
+  General CSS for app container
+*/
+.appContainer{
+  background-image: url('./assets/background.jpg');
+  min-height: 100vh;
+}
+
+.container{
+  background-color: var(--background);
+  padding-left: 10%;
+  padding-right: 10%;
+
+  --dot-bg: var(--secondary);
+  --dot-color: gray;
+  --dot-size: 1px;
+  --dot-space: 22px;
+  background:
+    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+}
+
+/*Styling for navbar component*/
+.navBarContainer{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  backdrop-filter: blur(4.8px);
+  box-shadow: 10px 10px 5px var(--secondary)
+}
+
+/*Stylding for custom button component*/
+.customButton{
+  padding: 10px;
+  background-color: inherit;
+  border:none;
+  color: var(--textAccent);
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size:large;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.customButton::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 0;
+  display: block;
+  height: 5px;
+  background-color: var(--accent);
+  border-radius: 16px;
+  transition: all 0.3s ease-out 0s;
+}
+
+.customButton:hover::after {
+  width: 100%;
+}
+
+.customButton:hover{
+  cursor: pointer;
+  transform: scale(1.1) translateY(-1px);
+}
+
+/*Styling for generic horizontal container*/
+.hContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.titleHighlight{
+  color: var(--textAccent);
+  font-size: larger;
+  font-weight: 900;
+  padding: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

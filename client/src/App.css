@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-
 }
 
 /*Color pallete for website*/
@@ -24,18 +23,13 @@
 }
 
 .container{
-  background-color: var(--background);
-  padding-left: 10%;
-  padding-right: 10%;
-
-  --dot-bg: var(--secondary);
-  --dot-color: gray;
-  --dot-size: 1px;
-  --dot-space: 22px;
-  background:
-    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-    var(--dot-color);
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--textAccent);
 }
 
 /*Styling for navbar component*/
@@ -47,7 +41,8 @@
   padding-top: 1%;
   padding-bottom: 1%;
   backdrop-filter: blur(4.8px);
-  box-shadow: 10px 10px 5px var(--secondary)
+  box-shadow: 10px 10px 5px var(--secondary);
+  background-color: var(--primary);
 }
 
 /*Stylding for custom button component*/
@@ -58,7 +53,7 @@
   color: var(--textAccent);
   font-family: sans-serif;
   font-weight: 900;
-  font-size:large;
+  font-size: large;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -86,12 +81,48 @@
   transform: scale(1.1) translateY(-1px);
 }
 
+/*Styling for custom box button*/
+.customBoxButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: inherit;
+  border: 2px solid var(--textAccent);
+  border-radius: 10px;
+  color: var(--secondary);
+  background-color: var(--textAccent);
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: large;
+  box-shadow: 10px 10px 5px var(--secondary);
+  backdrop-filter: blur(4.8px);
+  transition: transform 0.3s ease;
+}
+
+.customBoxButton:hover{
+  border: 2px solid var(--textAccent);
+  transform: scale(1.1) translateY(-1px);
+  cursor: pointer;
+
+}
+
 /*Styling for generic horizontal container*/
 .hContainer{
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
+}
+
+.vContainer{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.columnTwo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .titleHighlight{
@@ -101,3 +132,4 @@
   padding: 10px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+

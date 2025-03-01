@@ -11,9 +11,7 @@ function NavBar(){
 
   return(
     <div className="navBarContainer">
-      <div className="hContainer">
-        <span className="titleHighlight">Connor Blaha</span>
-      </div>
+      <span className="titleHighlight">Connor Blaha</span>
       <div className="hContainer">
         <Button onClick={() => handleClick('/')}> <FontAwesomeIcon icon={faHome}/> Home</Button>
         <Button onClick={() => handleClick('/Projects')}> <FontAwesomeIcon icon={faProjectDiagram}/> Projects</Button>

@@ -40,9 +40,44 @@
   padding-right: 10%;
   padding-top: 1%;
   padding-bottom: 1%;
-  backdrop-filter: blur(4.8px);
   box-shadow: 10px 10px 5px var(--secondary);
-  background-color: var(--primary);
+  background: rgba(0, 26, 37, 0.5);
+  backdrop-filter: blue(10px);
+  flex-wrap: wrap;
+}
+
+.hamburger{
+  display: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--textAccent);
+  font-size: large;
+}
+
+.navButtons{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.navButtons.open{
+  display: flex;
+}
+
+@media (max-width: 920px) {
+  .navButtons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
 
 /*Stylding for custom button component*/
@@ -97,11 +132,13 @@
   font-size: large;
   box-shadow: 10px 10px 5px var(--secondary);
   backdrop-filter: blur(4.8px);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .customBoxButton:hover{
   border: 2px solid var(--textAccent);
+  background-color: var(--secondary);
+  color: white;
   transform: scale(1.1) translateY(-1px);
   cursor: pointer;
 
@@ -110,13 +147,22 @@
 /*Styling for generic horizontal container*/
 .hContainer{
   display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.hContainerCentered{
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
 .vContainer{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -127,9 +173,16 @@
 
 .titleHighlight{
   color: var(--textAccent);
-  font-size: larger;
+  font-size: xx-large;
   font-weight: 900;
   padding: 10px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.title{
+  font-size: 3rem;
+}
+
+.subtitle{
+  font-size: 2rem;
+}

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import Button from './button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faProjectDiagram, faFileAlt, faUser, faEnvelope, faBlog } from '@fortawesome/free-solid-svg-icons';
+import {faHome, faProjectDiagram, faFileAlt, faUser, faEnvelope, faBlog } from '@fortawesome/free-solid-svg-icons';
 function NavBar(){
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -17,8 +17,10 @@ function NavBar(){
   return(
     <div className="navBarContainer">
       <h1 className="titleHighlight">Connor Blaha</h1>
-      <div className="hamburger" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={faBars} />
+      <div className={`hamburger ${open ? 'open' : ''}`} onClick={toggleMenu}>
+        <div class = "line line1"></div>
+        <div class = "line line2"></div>
+        <div class = "line line3"></div>
       </div>
       <div className={`navButtons ${open ? 'open' : ''}`}>
         <Button onClick={() => handleClick('/')}> <FontAwesomeIcon icon={faHome}/> Home</Button>

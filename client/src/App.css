@@ -32,26 +32,16 @@
   color: var(--textAccent);
 }
 
-/*Styling for navbar component*/
+/*Styling start navbar*/
 .navBarContainer{
   display: flex;
   justify-content: space-between;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  align-items: center;
+  padding: 1% 10%;
   box-shadow: 10px 10px 5px var(--secondary);
   background: rgba(0, 26, 37, 0.5);
-  backdrop-filter: blue(10px);
+  backdrop-filter: blur(3px);
   flex-wrap: wrap;
-}
-
-.hamburger{
-  display: none;
-  font-size: 1rem;
-  cursor: pointer;
-  color: var(--textAccent);
-  font-size: large;
 }
 
 .navButtons{
@@ -59,26 +49,79 @@
   flex-direction:row;
   align-items: center;
   justify-content: center;
-  
+  height: auto;
 }
 
-.navButtons.open{
-  display: flex;
+/*For mobile navbar*/
+.hamburger{
+  display: none;
 }
+
+.hamburger > *{
+  transition: all 0.2s ease-in-out;
+}
+
 
 @media (max-width: 920px) {
   .navButtons {
-    display: none;
     flex-direction: column;
     width: 100%;
-  }
-  .hamburger{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out 0.2s;
   }
 
+  .navButtons.open{
+    max-height: 200px;
+    opacity: 1;
+  }
+
+  .navButtons:not(.open){
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.2s ease-in-out 0.1s;
+  }
+
+  /*Styling related to mobile hamburger menu*/
+  .hamburger{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: 0.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--textAccent);
+    font-size: x-large;
+  }
+
+  .line{
+    background-color: var(--textAccent);
+    width: 2rem;
+    height: 0.2rem;
+    border-radius: 10px;
+  }
+
+  .hamburger.open .line1{
+    transform: rotate(45deg) translateY(0.6rem);
+  }
+
+  .hamburger.open .line2{
+    transform: rotate(45deg) translateY(-0.2rem);
+    opacity: 0;
+  }
+
+  .hamburger.open .line3{
+    transform: rotate(-45deg) translateY(-0.6rem);
+  }
+
+  .hamburger.open > *{
+    background-color: var(--accent);
+  }
 }
+/*styling end navbar*/
 
 /*Stylding for custom button component*/
 .customButton{

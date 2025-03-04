@@ -29,7 +29,6 @@
   justify-content: center;
   gap: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--textAccent);
 }
 
 /*Styling start navbar*/
@@ -38,7 +37,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1% 10%;
-  box-shadow: 10px 10px 5px var(--secondary);
+  /*box-shadow: 10px 10px 5px var(--secondary);*/
   background: rgba(0, 26, 37, 0.5);
   backdrop-filter: blur(3px);
   flex-wrap: wrap;
@@ -123,6 +122,25 @@
 }
 /*styling end navbar*/
 
+/*Styling for Hero section*/
+.Hero{
+  color: var(--text);
+}
+/*End styling for Hero Section*/
+
+/*Styling for Footer section*/
+.footer{
+  background: rgba(0, 26, 37, 0.5);
+  color: var(--textAccent);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 1%;
+}
+/*End styling for footer section*/
+
 /*Stylding for custom button component*/
 .customButton{
   padding: 10px;
@@ -158,7 +176,6 @@
   cursor: pointer;
   transform: scale(1.1) translateY(-1px);
 }
-
 /*Styling for custom box button*/
 .customBoxButton{
   display: flex;
@@ -209,6 +226,12 @@
   gap: 20px;
 }
 
+.vContainerCentered{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .columnTwo{
   display: grid;
   grid-template-columns: 1fr 1fr;

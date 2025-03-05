@@ -16,7 +16,7 @@ function NavBar(){
   }
   return(
     <div className="navBarContainer">
-      <h1 className="titleHighlight">Connor Blaha</h1>
+      <h1 className="titleHighlight">Connor <span className="textNeutral">Blaha</span></h1>
       <div className={`hamburger ${open ? 'open' : ''}`} onClick={toggleMenu}>
         <div class = "line line1"></div>
         <div class = "line line2"></div>

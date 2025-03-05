@@ -7,7 +7,7 @@ import profileImage from '../assets/asdf.png'
 function Home(){
 
   return(
-    <div>
+    <div className="Home">
       <NavBar/>
       <Hero/>
       <Footer/>

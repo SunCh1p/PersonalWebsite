@@ -47,7 +47,7 @@
   display: flex;
   flex-direction:row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: auto;
 }
 
@@ -125,6 +125,7 @@
 /*Styling for Hero section*/
 .Hero{
   color: var(--text);
+  scroll-behavior:auto;
 }
 /*End styling for Hero Section*/
 
@@ -219,6 +220,7 @@
   gap: 20px;
 }
 
+/*Generic styling for vertical contaienrs*/
 .vContainer{
   display: flex;
   flex-direction: column;
@@ -252,3 +254,19 @@
 .subtitle{
   font-size: 2rem;
 }
+
+.textAccent{
+  color: var(--textAccent);
+}
+
+.textNeutral{
+  color: var(--neutral);
+}
+
+.DecorativeHLine{
+  width: 10%;
+  height: 4px;
+  border-radius:4px;
+  background-color: var(--neutral);
+}
+

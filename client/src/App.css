@@ -3,26 +3,58 @@
   margin: 0;
 }
 
+body {
+  background-color: var(--primary-dark);
+}
+
 /*Color pallete for website*/
 :root {
-  --primary: #001a25;
+  /*Dark color pallete*/
+  --primary-dark: #001e2b;
+  --darkerprimary: #00151f;
   --secondary: #003f5c;
   --background: white;
   --text: black;
   --textAccent: white;
   --accent: #ff6361;
   --neutral: #ffa600;
+  --hover-dark: #1d333d;;
+
+  /*Light Color pallete*/
+  --primary-light: rgb(235, 235, 235);
+  --hover-light: rgb(214, 214, 214);
 }
 
-/*
+/*light color classes*/
+.bgPrimary-light{
+  background-color: var(--primary-light)
+}
+
+.textLight{
+  color: black;
+}
+
+/*dark color classes*/
+.bgPrimary-dark {
+  background-color: var(--primary-dark);
+}
+
+.textDark{
+  color: white;
+}
+
+.bgdprimary-dark {
+  background-color: var(--darkerprimary);
+}
+
+/*Short Description Here.
   General CSS for app container
 */
-.appContainer{
-  background-image: url('./assets/background.jpg');
+.appContainer {
   min-height: 100vh;
 }
 
-.container{
+.container {
   padding: 10%;
   display: flex;
   flex-direction: column;
@@ -32,37 +64,36 @@
 }
 
 /*Styling start navbar*/
-.navBarContainer{
+.navBarContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1% 10%;
-  /*box-shadow: 10px 10px 5px var(--secondary);*/
-  background: rgba(0, 26, 37, 0.5);
-  backdrop-filter: blur(3px);
+  padding: 0.2% 10%;
   flex-wrap: wrap;
 }
 
-.navButtons{
+.navButtons {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 3rem;
   height: auto;
 }
 
 /*For mobile navbar*/
-.hamburger{
+.hamburger {
   display: none;
 }
 
-.hamburger > *{
+.hamburger>* {
   transition: all 0.2s ease-in-out;
 }
 
 
 @media (max-width: 920px) {
   .navButtons {
+    gap: 0px;
     flex-direction: column;
     width: 100%;
     max-height: 0;
@@ -71,19 +102,19 @@
     transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out 0.2s;
   }
 
-  .navButtons.open{
-    max-height: 200px;
+  .navButtons.open {
+    max-height: 300px;
     opacity: 1;
   }
 
-  .navButtons:not(.open){
+  .navButtons:not(.open) {
     max-height: 0;
     opacity: 0;
     transition: max-height 0.2s ease-in-out 0.1s;
   }
 
   /*Styling related to mobile hamburger menu*/
-  .hamburger{
+  .hamburger {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,41 +127,45 @@
     font-size: x-large;
   }
 
-  .line{
+  .line {
     background-color: var(--textAccent);
     width: 2rem;
     height: 0.2rem;
     border-radius: 10px;
   }
 
-  .hamburger.open .line1{
+  .hamburger.open .line1 {
     transform: rotate(45deg) translateY(0.6rem);
   }
 
-  .hamburger.open .line2{
+  .hamburger.open .line2 {
     transform: rotate(45deg) translateY(-0.2rem);
     opacity: 0;
   }
 
-  .hamburger.open .line3{
+  .hamburger.open .line3 {
     transform: rotate(-45deg) translateY(-0.6rem);
   }
 
-  .hamburger.open > *{
+  .hamburger.open>* {
     background-color: var(--accent);
   }
 }
+
 /*styling end navbar*/
 
 /*Styling for Hero section*/
-.Hero{
-  color: var(--text);
-  scroll-behavior:auto;
+.Hero {
+  margin: 4% 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
+
 /*End styling for Hero Section*/
 
 /*Styling for Footer section*/
-.footer{
+.footer {
   background: rgba(0, 26, 37, 0.5);
   color: var(--textAccent);
   backdrop-filter: blur(3px);
@@ -140,20 +175,22 @@
   bottom: 0;
   padding: 1%;
 }
+
 /*End styling for footer section*/
 
 /*Stylding for custom button component*/
-.customButton{
-  padding: 10px;
+.customButton {
+  padding: 0.5rem;
   background-color: inherit;
-  border:none;
-  color: var(--textAccent);
+  color: inherit;
+  border: none;
   font-family: sans-serif;
-  font-weight: 900;
+  font-weight: 300;
   font-size: large;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .customButton::after {
@@ -164,7 +201,7 @@
   width: 0;
   display: block;
   height: 5px;
-  background-color: var(--accent);
+  background-color: var(--neutral);
   border-radius: 16px;
   transition: all 0.3s ease-out 0s;
 }
@@ -173,12 +210,23 @@
   width: 100%;
 }
 
-.customButton:hover{
+.customButton:hover {
   cursor: pointer;
   transform: scale(1.1) translateY(-1px);
 }
+
+/* Light mode hover */
+.light-mode .customButton:hover {
+  background-color: var(--hover-light);
+}
+
+/* Dark mode hover */
+.dark-mode .customButton:hover {
+  background-color: var(--hover-dark);
+}
+
 /*Styling for custom box button*/
-.customBoxButton{
+.customBoxButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,12 +239,10 @@
   font-family: sans-serif;
   font-weight: 900;
   font-size: large;
-  box-shadow: 10px 10px 5px var(--secondary);
-  backdrop-filter: blur(4.8px);
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.customBoxButton:hover{
+.customBoxButton:hover {
   border: 2px solid var(--textAccent);
   background-color: var(--secondary);
   color: white;
@@ -206,13 +252,13 @@
 }
 
 /*Styling for generic horizontal container*/
-.hContainer{
+.hContainer {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
 
-.hContainerCentered{
+.hContainerCentered {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -221,52 +267,52 @@
 }
 
 /*Generic styling for vertical contaienrs*/
-.vContainer{
+.vContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
 }
 
-.vContainerCentered{
+.vContainerCentered {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.columnTwo{
+
+.columnTwo {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.titleHighlight{
-  color: var(--textAccent);
+.titleHighlight {
+  color: inherit;
   font-size: xx-large;
   font-weight: 900;
   padding: 10px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.title{
+.title {
   font-size: 3rem;
 }
 
-.subtitle{
+.subtitle {
   font-size: 2rem;
 }
 
-.textAccent{
+.textAccent {
   color: var(--textAccent);
 }
 
-.textNeutral{
+.textNeutral {
   color: var(--neutral);
 }
 
-.DecorativeHLine{
-  width: 10%;
+.DecorativeHLine {
+  width: 80%;
   height: 4px;
-  border-radius:4px;
+  border-radius: 4px;
   background-color: var(--neutral);
 }
-

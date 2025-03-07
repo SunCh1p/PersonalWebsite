@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import NavBar from '../components/navbar';
 import Hero from '../components/hero.jsx';
 import Footer from '../components/footer.jsx';
@@ -10,6 +10,8 @@ function Home(){
     <div className="Home">
       <NavBar/>
       <Hero/>
+
+
       <Footer/>
     </div>
   );

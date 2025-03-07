@@ -37,10 +37,13 @@ function NavBar(){
   return(
     <div className={`navBarContainer ${scrollState ? 'blur' : ''} bgdprimary`}>
       <h1 className="titleHighlight">Connor <span className="textNeutral">Blaha</span></h1>
-      <div className={`hamburger ${open ? 'open' : ''}`} onClick={toggleMenu}>
-        <div className = "line line1"></div>
-        <div className = "line line2"></div>
-        <div className = "line line3"></div>
+      <div style={{display: "flex", flexDirection: "row", gap: "1rem"}}>
+        <div className="transition"><Button onClick={() => toggleMode()}>{darkMode ? <FontAwesomeIcon style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} icon={faSun}/> : <FontAwesomeIcon style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} icon={faMoon}/>}</Button></div>
+        <div className={`hamburger ${open ? 'open' : ''}`} onClick={toggleMenu}>
+          <div className = "line line1"></div>
+          <div className = "line line2"></div>
+          <div className = "line line3"></div>
+        </div>
       </div>
       <div className={`navButtons ${open ? 'open' : ''}`}>
         <Button onClick={() => handleClick('/')}> <FontAwesomeIcon icon={faHome}/> Home</Button>
@@ -48,7 +51,7 @@ function NavBar(){
         <Button onClick={() => handleClick('/Resume')}> <FontAwesomeIcon icon={faFileAlt}/> Resume</Button>
         <Button onClick={() => handleClick('/About')}> <FontAwesomeIcon icon={faUser}/> About</Button>
         <Button onClick={() => handleClick('/Contact')}><FontAwesomeIcon icon={faEnvelope}/>Contact</Button>
-        <Button onClick={() => toggleMode()}>{darkMode ? <FontAwesomeIcon style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} icon={faSun}/> : <FontAwesomeIcon style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} icon={faMoon}/>}</Button>
+        {!open && <Button onClick={() => toggleMode()}>{darkMode ? <FontAwesomeIcon style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} icon={faSun}/> : <FontAwesomeIcon style={{ fontSize: "1rem", width: "1rem", height: "1rem" }} icon={faMoon}/>}</Button>}
       </div>
     </div>
   );

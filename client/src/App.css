@@ -90,6 +90,10 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
+.transition{
+  display: none;
+}
+
 
 @media (max-width: 920px) {
   .navButtons {
@@ -127,11 +131,22 @@ body {
     font-size: x-large;
   }
 
+  .transition{
+    display: flex;
+  }
+
   .line {
-    background-color: var(--textAccent);
     width: 2rem;
     height: 0.2rem;
     border-radius: 10px;
+  }
+
+  .dark-mode .line {
+    background-color: white;
+  }
+
+  .light-mode .line {
+    background-color: black;;
   }
 
   .hamburger.open .line1 {

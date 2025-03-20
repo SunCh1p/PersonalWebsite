@@ -52,13 +52,13 @@ function CV(){
         <div className="vContainerCentered">
           <div>
             <BoxButton>
-              <a href="/resume.pdf" download>
+              <a href="/~cblaha1/resume.pdf" download>
                 Download Resume <FontAwesomeIcon icon={faFileDownload} />
               </a>
             </BoxButton>
           </div>
           <iframe
-            src="/resume.pdf"
+            src="/~cblaha1/resume.pdf"
             width="700"
             height="800"
             style={{border:"none"}}/>

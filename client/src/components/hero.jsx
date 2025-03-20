@@ -1,8 +1,14 @@
 import React, {useContext} from "react";
 import BoxButton from './boxbutton';
+import { useNavigate } from 'react-router-dom';
 
 
 function Hero(){
+  const navigate = useNavigate();
+  
+  function handleClick(){
+    navigate('/About')
+  }
   return(
     <div className={`Hero vContainerCentered`}>
           <h1 className="subtitle">Hi, I'm Connor.</h1>
@@ -16,7 +22,7 @@ function Hero(){
           </div>
         <div className="DecorativeHLine"></div>
         <div className="hContainerCentered">
-          <BoxButton>Learn more</BoxButton>
+          <BoxButton onClick={handleClick}>About me</BoxButton>
         </div>
    </div>
   );

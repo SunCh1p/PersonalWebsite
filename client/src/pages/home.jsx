@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import NavBar from '../components/navbar';
 import Hero from '../components/hero.jsx';
 import Footer from '../components/footer.jsx';
-import profileImage from '../assets/asdf.png'
+import Intro from '../components/intro.jsx';
 
 function Home(){
 
@@ -10,8 +10,6 @@ function Home(){
     <div className="Home">
       <NavBar/>
       <Hero/>
-
-
       <Footer/>
     </div>
   );
